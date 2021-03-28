@@ -51,11 +51,26 @@ ja.最後のオプションは、インストーラーがWindowsのスタート�
 
 org.When running Clink via the methods above, Clink checks the parent process is supported and injects a DLL into it. The DLL then hooks the WriteConsole() and ReadConsole() Windows functions. The former is so that Clink can capture the current prompt, and the latter hook allows Clink to provide it's own Readline-powered command line editing.
 
-ja.上記の方法でClinkを実行すると、Clinkは親プロセスがサポートされていることを確認し、DLLをそのプロセスに挿入します。次に、DLLはWriteConsole Windows関数およびReadConsole Windows関数をフックします。前者はClinkが現在のプロンプトをキャプチャできるようにするためのものであり、後者のフックはClinkが独自のReadlineを利用したコマンドライン編集を提供できるようにするためのものです。
+ja.上記の方法でClinkを実行すると、Clinkは親プロセスがサポートされていることを確認し、DLLをそのプロセスに挿入します。次に、DLLは WriteConsole Windows関数および ReadConsole Windows関数をフックします。前者はClinkが現在のプロンプトをキャプチャできるようにするためのものであり、後者のフックはClinkが独自のReadlineを利用したコマンドライン編集を提供できるようにするためのものです。
 
 - WriteConsole関数：公式
-    - [ja.WriteConsole 関数 - Windows Console | Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/console/writeconsole)
+    - [ja. WriteConsole 関数 - Windows Console | Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/console/writeconsole)
     - [etc - google : WriteConsole](https://www.google.com/search?q=WriteConsole)
+- ReadConsole関数：公式
+    - [ja. ReadConsole 関数 - Windows Console | Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/console/readconsole)
+    - [etc - google : ReadConsole](https://www.google.com/search?q=ReadConsole)
+- The GNU Readline Library：コミュニティ公式
+    - [en. ReadConsole 関数 - Windows Console | Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/console/readconsole)
+         - Webページ最下部の『このページを翻訳する』から日本語選択することで "Google翻訳" による日本語表示可能
+         - CLinkの ReadLine（独自？） については継続調査
+         - コミュニティ公式 ReadLine Document/ Distributions パラグラフ より Windows対応部分の記載抜粋
+              - org1. If you are running Windows, I recommend that you use Cygwin, who currently ship readline-7.0 for x86 and readline-7.0 for x86_64, or MinGW, which currently has packages for readline-5.2.
+              - org2. Microsoft offers its Windows Subsystem for Linux (WSL) as an installable add-on for Windows 10. It's basically a separate packaged version of the Linux kernel interface that runs as a Windows 10 service, and you can build and install readline-8.1 within that environment.
+              - ja1. Windowsを実行している場合は、現在 x86/ x86_64 いずれも readline-7.0を 以降の対応となっている Cygwin、または 現在readline-5.2のパッケージを提供しているMinGWを使用することを推奨します 。
+              - ja2. マイクロソフトは、Windows 10 Build 20xx以降を推奨しインストール可能なアドオンとしてLinux用のWindowsサブシステム（WSL2以上の実装）を提供 しています。この環境は基本的にWindows 10サービスとして実行される（Windowsカーネルとは独立した）Linuxカーネルインターフェイス/ ubuntsuディストリビューションベースの本物の完全なLinuxカーネルを含む のパッケージであり、その中でreadline-8.1をビルドしインストールできます。
+    - [etc - google : Windows ReadLine](https://www.google.com/search?q=Windows+ReadLine)
+
+
 
 
 ### Configuring Clink
