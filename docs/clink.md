@@ -100,14 +100,22 @@ Name                         | Description
 
 #### File Locations
 
-Settings and history are persisted to disk from session to session. The location of these files depends on which distribution of Clink was used. If you installed Clink using the .exe installer then Clink uses the current user's non-roaming application data directory. This user directory is usually found in one of the following locations;
+org.Settings and history are persisted to disk from session to session. The location of these files depends on which distribution of Clink was used. If you installed Clink using the .exe installer then Clink uses the current user's non-roaming application data directory. This user directory is usually found in one of the following locations;
+
+ja.設定と履歴は、セッション間でディスクに保持されます。これらのファイルの場所は、使用されたClinkのディストリビューションによって異なります。 .exeインストーラーを使用してClinkをインストールした場合、Clinkは現在のユーザーの非ローミングアプリケーションデータディレクトリを使用します。このユーザーディレクトリは通常、次のいずれかの場所にあります。
 
 - c:\Documents and Settings\\&lt;username&gt;\Local Settings\Application Data *(XP)*
 - c:\Users\\&lt;username&gt;\AppData\Local *(Vista onwards)*
+    - %LocalAppData%\Clink\\.history *(Windows7/ Windows10 onwards)*
 
-The .zip distribution of Clink creates and uses a directory called **profile** which is located in the same directory where Clink's core files are found.
+org.The .zip distribution of Clink creates and uses a directory called **profile** which is located in the same directory where Clink's core files are found.
 
-All of the above locations can be overridden using the **--profile &lt;path&gt;** command line option which is specified when injecting Clink into cmd.exe using **clink inject**.
+ja.Clinkの.zipディストリビューションは、Clinkの"コア"ファイル（本体）が見つかったのと同じディレクトリにprofileディレクトリを作成しヒストリーを保存します。
+
+org.All of the above locations can be overridden using the **--profile &lt;path&gt;** command line option which is specified when injecting Clink into cmd.exe using **clink inject**.
+
+ja.上記のヒストリー保存パスは、cmd.exeに対して **clink inject** 実行と **--profile <path>コマンドラインオプション** を指定することにより上書きできます。
+
 
 ### Configuring Readline
 
