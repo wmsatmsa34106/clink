@@ -1,6 +1,9 @@
 ### What is Clink?
 
+org.
 Clink combines the native Windows shell cmd.exe with the powerful command line editing features of the GNU Readline library, which provides rich completion, history, and line-editing capabilities. Readline is best known for its use in the famous Unix shell Bash, the standard shell for Mac OS X and many Linux distributions.
+
+ja.Clinkは、ネイティブのWindowsシェルcmd.exeと、GNU Readlineライブラリの強力なコマンドライン編集機能を組み合わせて、豊富な補完、履歴、および行編集機能を提供します。Readlineは、Mac OSXおよび多くのLinuxディストリビューションの標準シェルである有名なUnixシェルBashでの使用で最もよく知られています。
 
 ### Features
 
@@ -25,17 +28,35 @@ Clink combines the native Windows shell cmd.exe with the powerful command line e
 
 By default Clink binds **Alt-H** to display the current key bindings. More features can also be found in GNU's [Readline](http://tinyurl.com/oum26rp) and [History](http://tinyurl.com/p92oq5d) libraries' manuals.
 
+ja.デフォルトでは、Clinkは **Alt-H** をバインドして、現在のキーバインディングを表示します。その他の機能は、GNUの[Readline](http://tinyurl.com/oum26rp)および[History](http://tinyurl.com/p92oq5d)ライブラリのマニュアルにも記載されています。
+
+memo. Win10 build20xxあたりと、Installer版Clinkの組み合わせではAlt+Hは有効でない模様
+
+
 ### Usage
 
-There are three ways to use Clink the first of which is to add Clink to cmd.exe's autorun registry entry. This can be selected when installing Clink using the installer and Clink also provides the ability to manage this autorun entry from the command line. Running **clink autorun --help** has more information.
+org.There are three ways to use Clink the first of which is to add Clink to cmd.exe's autorun registry entry. This can be selected when installing Clink using the installer and Clink also provides the ability to manage this autorun entry from the command line. Running **clink autorun --help** has more information.
 
-The second alternative is to manually run Clink using the command **clink inject** from within a command prompt session to run Clink in that session.
+ja.Clinkを使用する方法は3つあります。最初の方法は、cmd.exeの自動実行レジストリエントリにClinkを追加することです。これは、インストーラーを使用してClinkをインストールするときに選択でき、Clinkは、コマンドラインからこの自動実行エントリを管理する機能も提供します。 **clink autorun --help**を実行すると、詳細が表示されます。
 
-The last option is to use the Clink shortcut that the installer adds to Windows' start menu. This is in essence a shortcut to the command **cmd.exe /k clink inject**.
+org.The second alternative is to manually run Clink using the command **clink inject** from within a command prompt orsession to run Clink in that session.
+
+ja.2番目の方法は、コマンドプロンプトセッション内からコマンド**clink inject**を使用してClinkを手動で実行し、そのセッションでClinkを実行することです。
+
+org.The last option is to use the Clink shortcut that the installer adds to Windows' start menu. This is in essence a shortcut to the command **cmd.exe /k clink inject**.
+
+ja.最後のオプションは、インストーラーがWindowsのスタートメニューに追加するClinkショートカットを使用することです。これは本質的に、コマンド**cmd.exe /k clink inject**へのショートカットです。
 
 ### How Clink Works
 
-When running Clink via the methods above, Clink checks the parent process is supported and injects a DLL into it. The DLL then hooks the WriteConsole() and ReadConsole() Windows functions. The former is so that Clink can capture the current prompt, and the latter hook allows Clink to provide it's own Readline-powered command line editing.
+org.When running Clink via the methods above, Clink checks the parent process is supported and injects a DLL into it. The DLL then hooks the WriteConsole() and ReadConsole() Windows functions. The former is so that Clink can capture the current prompt, and the latter hook allows Clink to provide it's own Readline-powered command line editing.
+
+ja.上記の方法でClinkを実行すると、Clinkは親プロセスがサポートされていることを確認し、DLLをそのプロセスに挿入します。次に、DLLはWriteConsole Windows関数およびReadConsole Windows関数をフックします。前者はClinkが現在のプロンプトをキャプチャできるようにするためのものであり、後者のフックはClinkが独自のReadlineを利用したコマンドライン編集を提供できるようにするためのものです。
+
+- WriteConsole関数：公式
+    - [ja.WriteConsole 関数 - Windows Console | Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/console/writeconsole)
+    - [etc - google : WriteConsole](https://www.google.com/search?q=WriteConsole)
+
 
 ### Configuring Clink
 
