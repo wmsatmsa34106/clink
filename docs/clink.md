@@ -119,13 +119,32 @@ ja.上記のヒストリー保存パスは、cmd.exeに対して **clink inject*
 
 ### Configuring Readline
 
-Readline itself can also be configured to add custom keybindings and macros by creating a Readline init file. There is excellent documentation for all the options available to configure Readline in Readline's [manual](http://tinyurl.com/oum26rp).
+org.Readline itself can also be configured to add custom keybindings and macros by creating a Readline init file. There is excellent documentation for all the options available to configure Readline in Readline's [manual](http://tinyurl.com/oum26rp) **Broken link**.
 
-Clink will search in the directory as specified by the HOME environment variable for one or all of the following files; `clink_inputrc`, `_inputrc`, and `.inputrc`. If HOME is unset then Clink will use either of the standard Windows environment variables `%homedrive%\%homepath%` or `%userprofile%`.
+ja.Readline自体は、Readline初期化ファイルを作成することによってカスタムキーバインディングとマクロを追加するように構成することもできます。 ReadlineのマニュアルにReadlineを構成するために利用できるすべてのオプションに関する優れたドキュメントがあります。
 
-Other software that also uses Readline will also look for the `.inputrc` file (and possibly the `_inputrc` file too). To set macros and keybindings intended only for Clink one can use the Readline init file conditional construct like this; `$if cmd.exe [...] $endif`.
+- readline(3) - Linux manual page
+    - https://man7.org/linux/man-pages/man3/readline.3.html
+    - [etc - configure Readline in Readline's](https://www.google.com/search?q=configure+Readline+in+Readline%27s)
 
-Editing the `clink_inputrc_base` is discouraged as this will change from version to version and may not be present in the future.
+org.Clink will search in the directory as specified by the HOME environment variable for one or all of the following files; `clink_inputrc`, `_inputrc`, and `.inputrc`. If HOME is unset then Clink will use either of the standard Windows environment variables `%homedrive%\%homepath%` or `%userprofile%`.
+
+ja._sub1.Clinkは、HOME環境変数で指定されたディレクトリで、次のファイルの1つまたはすべてを検索します。
+- HOME環境変数によるパス配下のファイルリスト
+    - `clink_inputrc`
+    - `_inputrc` 
+    - `.inputrc` 
+
+ja._sub2.HOME環境変数が設定されていない場合、Clinkは標準のWindows環境変数％homedrive％\％homepath％または％userprofile％のいずれかを使用します。
+
+
+org.Other software that also uses Readline will also look for the `.inputrc` file (and possibly the `_inputrc` file too). To set macros and keybindings intended only for Clink one can use the Readline init file conditional construct like this; `$if cmd.exe [...] $endif`.
+
+ja.Readlineを使用する他のソフトウェアも、 `.inputrc` ファイル（および場合によっては `_inputrc` ファイルも）を検索します。 Clink専用のマクロとキーバインディングを設定するには、次のようなReadlineinitファイルの条件付き構文を使用できます。 `$if cmd.exe [...] $endif` 。
+
+org.Editing the `clink_inputrc_base` is discouraged as this will change from version to version and may not be present in the future.
+
+ja.`clink_inputrc_base` を編集することはお勧めしません。これはバージョンごとに変更され、将来は存在しない可能性があるためです。
 
 ### Extending Clink
 
